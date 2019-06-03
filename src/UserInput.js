@@ -111,6 +111,7 @@ class UserInput extends Component {
                             id="chefName"
                             type="text"
                             placeholder="enter your name here."
+                            value={this.state.chefName}
                             onChange={this.handleChefNameChange}/>
                     </div>
 
@@ -122,6 +123,7 @@ class UserInput extends Component {
                             id="bentoTitle"
                             type="text"
                             placeholder="enter the title for your bento"
+                            value={this.state.bentoTitle}
                             onChange={this.handleBentoTitleChange}/>
                     </div>
 
