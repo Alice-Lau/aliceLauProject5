@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import firebase from './firebase.js';
+import Header from './Header.js';
+import UserInput from './UserInput.js';
+import BentoDisplay from './BentoDisplay.js';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+
+class App extends Component {
+  render() {
+    return(
+      <div className="wrapper">
+        {/* header component */}
+        <Header />
+
+        <main>
+          {/* inputForm component */}
+          {/* input text component for chef name */}
+          {/* input text component for bento title */}
+          {/* input radio component for ingredient 1 */}
+          {/* input radio component for ingredient 2 */}
+          {/* input radio component for ingredient 3 */}
+          {/* input radio component for ingredient 4 */}
+          {/* input submit button */}
+          <UserInput />
+
+
+          {/* display component */}
+          <BentoDisplay />
+        </main>
+      </div>
+    )
+  }
+}
 export default App;
