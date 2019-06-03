@@ -25,6 +25,7 @@ class UserInput extends Component {
         this.initialState = this.state;
     }
 
+    // listening to text input fields
     handleChefNameChange = changeEvent => {
         this.setState({
             chefName: changeEvent.target.value
@@ -37,6 +38,8 @@ class UserInput extends Component {
         })
     }
 
+    // listening to radio input fields
+    // was going to make the code more dry by using array and for loop, but did not fully understand the concept and was recommanded by mentor on Sunday fish bowl to stick with what I have at the moment
     handleIngredient1Change = changeEvent => {
         this.setState({
             ingredient1Img: changeEvent.target.value,
@@ -65,6 +68,8 @@ class UserInput extends Component {
         })
     }
 
+    // when form is submitted, input is checked and if no error, then data is sent to firebase
+    // form is then cleared
     handleSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
 
@@ -93,6 +98,7 @@ class UserInput extends Component {
         })
     }
 
+    // form is rendered
     render() {
         return(
             <div className="userInputForm">

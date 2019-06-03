@@ -52,6 +52,8 @@ class BentoDisplay extends Component {
                                     <img src={bento.ingredient3Img} alt={bento.ingredient3Name}/>
                                 </div>
                             </div>
+
+                            <p>bento includes {bento.ingredient4Name}, {bento.ingredient2Name}, {bento.ingredient1Name}, and {bento.ingredient3Name}</p>
                         </div>
                     )
                 })}
