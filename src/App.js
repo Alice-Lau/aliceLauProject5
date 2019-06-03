@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import firebase from './firebase.js';
 import Header from './Header.js';
 import UserInput from './UserInput.js';
 import BentoDisplay from './BentoDisplay.js';
