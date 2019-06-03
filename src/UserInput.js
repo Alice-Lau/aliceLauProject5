@@ -19,7 +19,7 @@ class UserInput extends Component {
             ingredient3Img: "./assets/coleslaw.svg",
             ingredient3Name: "coleslaw salad",
 
-            ingredient4Img: "./assets/vegieDumplings.svg",
+            ingredient4Img: "./assets/veggieDumplings.svg",
             ingredient4Name: "vegie dumplings"
         }
         this.initialState = this.state;
@@ -93,8 +93,8 @@ class UserInput extends Component {
             ingredient3Img: "./assets/coleslaw.svg",
             ingredient3Name: "coleslaw salad",
 
-            ingredient4Img: "./assets/vegieDumplings.svg",
-            ingredient4Name: "vegie dumplings"
+            ingredient4Img: "./assets/veggieDumplings.svg",
+            ingredient4Name: "veggie dumplings"
         })
     }
 
@@ -241,13 +241,13 @@ class UserInput extends Component {
                                     id="ingredient4Choice1"
                                     type="radio"
                                     name="ingredient4"
-                                    value="./assets/vegieDumplings.svg"
-                                    data-label="vegie dumplings"
-                                    checked={this.state.ingredient4Img === "./assets/vegieDumplings.svg" &&
-                                        this.state.ingredient4Name === "vegie dumplings"
+                                    value="./assets/veggieDumplings.svg"
+                                    data-label="veggie dumplings"
+                                    checked={this.state.ingredient4Img === "./assets/veggieDumplings.svg" &&
+                                        this.state.ingredient4Name === "veggie dumplings"
                                     }
                                     onChange={this.handleIngredient4Change} />
-                                vegie dumplings
+                                veggie dumplings
                             </label>
                         </div>
                         
