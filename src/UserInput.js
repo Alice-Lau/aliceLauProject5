@@ -20,7 +20,7 @@ class UserInput extends Component {
             ingredient3Name: "coleslaw salad",
 
             ingredient4Img: "./assets/veggieDumplings.svg",
-            ingredient4Name: "vegie dumplings"
+            ingredient4Name: "veggie dumplings"
         }
         this.initialState = this.state;
     }
