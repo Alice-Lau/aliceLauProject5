@@ -3,6 +3,7 @@ import Header from './Header.js';
 import HeaderMobile from './HeaderMobile.js';
 import UserInput from './UserInput.js';
 import BentoDisplay from './BentoDisplay.js';
+import Footer from './Footer.js';
 import './App.css';
 
 
@@ -31,6 +32,8 @@ class App extends Component {
           {/* display component */}
           <BentoDisplay />
         </main>
+
+        <Footer />
       </div>
     )
   }

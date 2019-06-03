@@ -268,6 +268,17 @@ main {
   margin: 5px 10px 10px 5px;
 }
 
+/* footer */
+footer {
+  background-image: linear-gradient(to top, #3f0406, #420507, #450609, #49080a, #4c090b);
+}
+
+footer p,
+footer a {
+  color: #ffe7d3;
+  text-align: center;
+}
+
 
 /* ***************************************************** */
 /*                      media queries                    */
