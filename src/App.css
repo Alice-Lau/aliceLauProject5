@@ -50,6 +50,7 @@ html{
   background-image: linear-gradient(to bottom, #f8ccb8, #f8d0be, #f8d3c4, #f8d7c9, #f8dbcf);
   font-size: 125%;
   font-family: 'Mukta', sans-serif;
+  color: #1d1d1d;
 }
 
 h1,
@@ -67,7 +68,8 @@ h1 {
 h2,
 h3,
 .chefName input,
-.bentoTitle input {
+.bentoTitle input,
+.submit button {
   font-family: 'Aubrey', cursive;
 }
 
@@ -75,13 +77,15 @@ h2 {
   font-size: 2.5rem;
 }
 
+.ingredient h2,
 h3 {
   font-size: 1.8rem;
 }
 
 p,
 .chefName input,
-.bentoTitle input {
+.bentoTitle input,
+.submit button {
   font-size: 1.3rem;
 }
 
@@ -109,6 +113,10 @@ header {
   background: rgba(19, 16, 16, 0.9);
 }
 
+.heroMobile {
+  display: none;
+}
+
 .heroTxt {
   padding: 10px;
   border: 2px solid #fff6ef;
@@ -117,6 +125,11 @@ header {
 header h1,
 header p {
   color: #fff6ef;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
 }
 
 /* ***************************************************** */
@@ -130,14 +143,16 @@ main {
 /* ***************************************************** */
 /*                       UserInput.js                    */
 /* ***************************************************** */
-.UserInputForm {
+.userInputForm {
   width: 50%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
+/* text inputs */
 .chefName,
 .bentoTitle {
+  margin: 30px 0;
   text-align: center;
 }
 
@@ -156,6 +171,235 @@ main {
 .chefName input:active,
 .bentoTitle input:hover,
 .bentoTitle input:focus,
-.bentoTitle input:active {
-  box-shadow: 0 0 20px #ffe7d3;
+.bentoTitle input:active,
+.submit button:hover,
+.submit button:focus,
+.submit button:active {
+  box-shadow: 0 0 20px #7e0005;
+}
+
+/* radio inputs */
+.ingredient {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredient h2,
+.ingredient div {
+  width: 30%;
+}
+
+.ingredient input:hover,
+.ingredient input:focus,
+.ingredient input:active {
+  box-shadow: 0 0 10px #7e0005;
+}
+
+.submit {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.submit button {
+  background-image: linear-gradient(to left top, #f8ccb8, #f8d0be, #f8d3c4, #f8d7c9, #f8dbcf);
+  border: none;
+  border-radius: 30px;
+  width: 40%;
+  line-height: 2rem;
+}
+
+/* ***************************************************** */
+/*                     BentoDispaly.js                   */
+/* ***************************************************** */
+.bentoDisplay {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.singleBento {
+  width: 30%;
+  text-align: center;
+}
+
+.bentoBox {
+  background: #1d1d1d;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bentoPart {
+  background-image: radial-gradient(circle, #7e0005, #720006, #660006, #5b0006, #4f0104);
+}
+
+.partTopLeft,
+.partBotRight {
+  width: calc( 45% - 15px);
+  padding: 15px 0;
+}
+
+.partTopRight,
+.partBotLeft {
+  width: calc( 55% - 15px);
+}
+
+.partTopLeft {
+  border-radius: 30px 0 0 0;
+  margin: 10px 5px 5px 10px;
+}
+
+.partTopRight {
+  border-radius: 0 30px 0 0;
+  margin: 10px 10px 5px 5px;
+}
+
+.partBotLeft {
+  border-radius: 0 0 0 30px;
+  margin: 5px 5px 10px 10px;
+}
+
+.partBotRight {
+  border-radius: 0 0 30px 0;
+  margin: 5px 10px 10px 5px;
+}
+
+
+/* ***************************************************** */
+/*                      media queries                    */
+/* ***************************************************** */
+@media (max-width: 1232px) {
+  .userInputForm {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1155px) {
+  .singleBento {
+    width: calc( 50% - 10px);
+    margin: 5px;
+  }
+
+}
+
+@media (max-width: 1090px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .heroTxt p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1030px) {
+  .userInputForm {
+    width: 70%;
+  }
+}
+
+@media (max-width: 886px) {
+  .userInputForm {
+    width: 80%;
+  }
+}
+
+@media (max-width: 777px) {
+  .userInputForm {
+    width: 90%;
+  }
+}
+
+@media (max-width: 770px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .ingredient {
+    flex-wrap: wrap;
+  }
+
+  .ingredient h2 {
+    width: 100%;
+  }
+
+  .ingredient div {
+    width: 50%;
+  }
+}
+
+@media (max-width: 725px) {
+  .singleBento h2 {
+    font-size: 2rem;
+  }
+
+  .singleBento h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    min-height: 70vh;
+  }
+
+  .heroDesktop {
+    display: none;
+  }
+
+  .heroMobile {
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    color: #ffe7d3;
+  }
+}
+
+@media (max-width: 590px) {
+  .singleBento {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .ingredient {
+    width: 45%;
+  }
+
+  h2,
+  .ingredient h2 {
+    font-size: 1.5rem;
+  }
+
+  .ingredient div {
+    width: 100%;
+  }
+
+  .submit button {
+    width: 70%;
+  }
+}
+
+@media (max-width: 430px) {
+  header {
+    background-position: 27%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .ingredient {
+    width: 50%;
+  }
+}
+
+@media (max-width: 382px) {
+  .ingredient {
+    width: 63%;
+  }
 }

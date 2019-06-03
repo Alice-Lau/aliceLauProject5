@@ -22,6 +22,7 @@ class UserInput extends Component {
             ingredient4Img: "./assets/vegieDumplings.svg",
             ingredient4Name: "vegie dumplings"
         }
+        this.initialState = this.state;
     }
 
     handleChefNameChange = changeEvent => {
@@ -69,12 +70,32 @@ class UserInput extends Component {
 
         const dbRef = firebase.database().ref();
 
-        dbRef.push(this.state);
+        this.state.chefName && this.state.bentoTitle
+            ? dbRef.push(this.state)
+            : alert('please complete your inputs');
+
+        this.setState({
+            chefName: "",
+
+            bentoTitle: "",
+
+            ingredient1Img: "./assets/noodles.svg",
+            ingredient1Name: "stir-fried noodles",
+
+            ingredient2Img: "./assets/honeyGarlicTofu.svg",
+            ingredient2Name: "honey garlic tofu",
+
+            ingredient3Img: "./assets/coleslaw.svg",
+            ingredient3Name: "coleslaw salad",
+
+            ingredient4Img: "./assets/vegieDumplings.svg",
+            ingredient4Name: "vegie dumplings"
+        })
     }
 
     render() {
         return(
-            <div className="UserInputForm">
+            <div className="userInputForm">
                 <form onSubmit={this.handleSubmit}>
                     <div className="chefName">
                         <label htmlFor="chefName">
@@ -99,120 +120,144 @@ class UserInput extends Component {
                     </div>
 
 
-                    <div className="ingreident1">
-                        <label htmlFor="ingredient1Choice1">
-                            <input
-                                id="ingredient1Choice1"
-                                type="radio"
-                                name="ingredient1"
-                                value="./assets/noodles.svg"
-                                data-label="stir-fried noodles"
-                                checked={this.state.ingredient1Img === "./assets/noodles.svg" &&
-                                    this.state.ingredient1Name === "stir-fried noodles"
-                                        }
-                                onChange={this.handleIngredient1Change}/>
+                    <div className="ingredient ingredient1">
+                        <h2>ingredient 1:</h2>
+                        <div>
+                            <label htmlFor="ingredient1Choice1">
+                                <input
+                                    id="ingredient1Choice1"
+                                    type="radio"
+                                    name="ingredient1"
+                                    value="./assets/noodles.svg"
+                                    data-label="stir-fried noodles"
+                                    checked={this.state.ingredient1Img === "./assets/noodles.svg" &&
+                                        this.state.ingredient1Name === "stir-fried noodles"
+                                    }
+                                    onChange={this.handleIngredient1Change} />
                                 stir-fried noodles
-                        </label>
-                        <label htmlFor="ingredient1Choice2">
-                            <input
-                                id="ingredient1Choice2"
-                                type="radio"
-                                name="ingredient1"
-                                value="./assets/sushiMaki.svg"
-                                data-label="sushi maki rolls"
-                                checked={this.state.ingredient1Img === "./assets/sushiMaki.svg" &&
-                                    this.state.ingredient1Name === "sushi maki rolls"
-                                        }
-                                onChange={this.handleIngredient1Change} />
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <label htmlFor="ingredient1Choice2">
+                                <input
+                                    id="ingredient1Choice2"
+                                    type="radio"
+                                    name="ingredient1"
+                                    value="./assets/sushiMaki.svg"
+                                    data-label="sushi maki rolls"
+                                    checked={this.state.ingredient1Img === "./assets/sushiMaki.svg" &&
+                                        this.state.ingredient1Name === "sushi maki rolls"
+                                    }
+                                    onChange={this.handleIngredient1Change} />
                                 sushi maki rolls
-                        </label>
+                            </label>
+                        </div>
                     </div>
 
-                    <div className="ingreident2">
-                        <label htmlFor="ingredient2Choice1">
-                            <input
-                                id="ingredient2Choice1"
-                                type="radio"
-                                name="ingredient2"
-                                value="./assets/honeyGarlicTofu.svg"
-                                data-label="honey garlic tofu"
-                                checked={this.state.ingredient2Img === "./assets/honeyGarlicTofu.svg" &&
-                                    this.state.ingredient2Name === "honey garlic tofu"
-                                }
-                                onChange={this.handleIngredient2Change} />
-                            honey garlic tofu
-                        </label>
-                        <label htmlFor="ingredient2Choice2">
-                            <input
-                                id="ingredient2Choice2"
-                                type="radio"
-                                name="ingredient2"
-                                value="./assets/friedShrimps.svg"
-                                data-label="fried shrimps"
-                                checked={this.state.ingredient2Img === "./assets/friedShrimps.svg" &&
-                                    this.state.ingredient2Name === "fried shrimps"
-                                }
-                                onChange={this.handleIngredient2Change} />
-                            fried shrimps
-                        </label>
+                    <div className="ingredient ingredient2">
+                        <h2>ingredient 2:</h2>
+                        <div>
+                            <label htmlFor="ingredient2Choice1">
+                                <input
+                                    id="ingredient2Choice1"
+                                    type="radio"
+                                    name="ingredient2"
+                                    value="./assets/honeyGarlicTofu.svg"
+                                    data-label="honey garlic tofu"
+                                    checked={this.state.ingredient2Img === "./assets/honeyGarlicTofu.svg" &&
+                                        this.state.ingredient2Name === "honey garlic tofu"
+                                    }
+                                    onChange={this.handleIngredient2Change} />
+                                honey garlic tofu
+                            </label>
+                        </div>
+
+                        <div>
+                            <label htmlFor="ingredient2Choice2">
+                                <input
+                                    id="ingredient2Choice2"
+                                    type="radio"
+                                    name="ingredient2"
+                                    value="./assets/friedShrimps.svg"
+                                    data-label="fried shrimps"
+                                    checked={this.state.ingredient2Img === "./assets/friedShrimps.svg" &&
+                                        this.state.ingredient2Name === "fried shrimps"
+                                    }
+                                    onChange={this.handleIngredient2Change} />
+                                fried shrimps
+                            </label>
+                        </div>
                     </div>
 
-                    <div className="ingreident3">
-                        <label htmlFor="ingredient3Choice1">
-                            <input
-                                id="ingredient3Choice1"
-                                type="radio"
-                                name="ingredient3"
-                                value="./assets/coleslaw.svg"
-                                data-label="coleslaw salad"
-                                checked={this.state.ingredient3Img === "./assets/coleslaw.svg" &&
-                                    this.state.ingredient3Name === "coleslaw salad"
-                                }
-                                onChange={this.handleIngredient3Change} />
-                            coleslaw salad
-                        </label>
-                        <label htmlFor="ingredient3Choice2">
-                            <input
-                                id="ingredient3Choice2"
-                                type="radio"
-                                name="ingredient3"
-                                value="./assets/seaweedSalad.svg"
-                                data-label="seaweed salad"
-                                checked={this.state.ingredient3Img === "./assets/seaweedSalad.svg" &&
-                                    this.state.ingredient3Name === "seaweed salad"
-                                }
-                                onChange={this.handleIngredient3Change} />
-                            seaweed salad
-                        </label>
+                    <div className="ingredient ingredient3">
+                        <h2>ingredient 3:</h2>
+                        <div>
+                            <label htmlFor="ingredient3Choice1">
+                                <input
+                                    id="ingredient3Choice1"
+                                    type="radio"
+                                    name="ingredient3"
+                                    value="./assets/coleslaw.svg"
+                                    data-label="coleslaw salad"
+                                    checked={this.state.ingredient3Img === "./assets/coleslaw.svg" &&
+                                        this.state.ingredient3Name === "coleslaw salad"
+                                    }
+                                    onChange={this.handleIngredient3Change} />
+                                coleslaw salad
+                            </label>
+                        </div>
+
+                        <div>
+                            <label htmlFor="ingredient3Choice2">
+                                <input
+                                    id="ingredient3Choice2"
+                                    type="radio"
+                                    name="ingredient3"
+                                    value="./assets/seaweedSalad.svg"
+                                    data-label="seaweed salad"
+                                    checked={this.state.ingredient3Img === "./assets/seaweedSalad.svg" &&
+                                        this.state.ingredient3Name === "seaweed salad"
+                                    }
+                                    onChange={this.handleIngredient3Change} />
+                                seaweed salad
+                            </label>
+                        </div>
                     </div>
 
-                    <div className="ingreident4">
-                        <label htmlFor="ingredient4Choice1">
-                            <input
-                                id="ingredient4Choice1"
-                                type="radio"
-                                name="ingredient4"
-                                value="./assets/vegieDumplings.svg"
-                                data-label="vegie dumplings"
-                                checked={this.state.ingredient4Img === "./assets/vegieDumplings.svg" &&
-                                    this.state.ingredient4Name === "vegie dumplings"
-                                }
-                                onChange={this.handleIngredient4Change} />
-                            vegie dumplings
-                        </label>
-                        <label htmlFor="ingredient4Choice2">
-                            <input
-                                id="ingredient4Choice2"
-                                type="radio"
-                                name="ingredient4"
-                                value="./assets/fruitSalad.svg"
-                                data-label="fruit salad"
-                                checked={this.state.ingredient4Img === "./assets/fruitSalad.svg" &&
-                                    this.state.ingredient4Name === "fruit salad"
-                                }
-                                onChange={this.handleIngredient4Change} />
-                            fruit salad
-                        </label>
+                    <div className="ingredient ingredient4">
+                        <h2>ingredient 4:</h2>
+                        <div>
+                            <label htmlFor="ingredient4Choice1">
+                                <input
+                                    id="ingredient4Choice1"
+                                    type="radio"
+                                    name="ingredient4"
+                                    value="./assets/vegieDumplings.svg"
+                                    data-label="vegie dumplings"
+                                    checked={this.state.ingredient4Img === "./assets/vegieDumplings.svg" &&
+                                        this.state.ingredient4Name === "vegie dumplings"
+                                    }
+                                    onChange={this.handleIngredient4Change} />
+                                vegie dumplings
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <label htmlFor="ingredient4Choice2">
+                                <input
+                                    id="ingredient4Choice2"
+                                    type="radio"
+                                    name="ingredient4"
+                                    value="./assets/fruitSalad.svg"
+                                    data-label="fruit salad"
+                                    checked={this.state.ingredient4Img === "./assets/fruitSalad.svg" &&
+                                        this.state.ingredient4Name === "fruit salad"
+                                    }
+                                    onChange={this.handleIngredient4Change} />
+                                fruit salad
+                            </label>
+                        </div>
                     </div>
 
 

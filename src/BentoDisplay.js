@@ -35,19 +35,21 @@ class BentoDisplay extends Component {
                     return(
                         <div key={index} className="singleBento">
                             <h2>{bento.bentoTitle}</h2>
+
                             <h3>by Chef {bento.chefName}</h3>
+
                             <div className="bentoBox">
-                                <div className="partTopLeft">
-                                    <img src={bento.ingredient1Img} alt={bento.ingredient1Name}/>
+                                <div className="bentoPart partTopLeft">
+                                    <img src={bento.ingredient4Img} alt={bento.ingredient4Name}/>
                                 </div>
-                                <div className="partTopRight">
+                                <div className="bentoPart partTopRight">
                                     <img src={bento.ingredient2Img} alt={bento.ingredient2Name}/>
                                 </div>
-                                <div className="partBotLeft">
-                                    <img src={bento.ingredient3Img} alt={bento.ingredient3Name}/>
+                                <div className="bentoPart partBotLeft">
+                                    <img src={bento.ingredient1Img} alt={bento.ingredient1Name}/>
                                 </div>
-                                <div className="partBotRight">
-                                    <img src={bento.ingredient4Img} alt={bento.ingredient4Name}/>
+                                <div className="bentoPart partBotRight">
+                                    <img src={bento.ingredient3Img} alt={bento.ingredient3Name}/>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header.js';
+import HeaderMobile from './HeaderMobile.js';
 import UserInput from './UserInput.js';
 import BentoDisplay from './BentoDisplay.js';
 import './App.css';
@@ -12,6 +13,8 @@ class App extends Component {
       <div className="wrapper">
         {/* header component */}
         <Header />
+
+        <HeaderMobile />
 
         <main>
           {/* inputForm component */}
