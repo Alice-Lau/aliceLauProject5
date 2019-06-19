@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
+import jump from 'jump.js'
 
 class UserInput extends Component {
     constructor(props) {

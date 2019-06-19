@@ -62,7 +62,7 @@ p {
 
 h1 {
   font-family: 'Shojumaru', cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h2,
@@ -120,6 +120,10 @@ header {
 .heroTxt {
   padding: 10px;
   border: 2px solid #fff6ef;
+}
+
+.heroTxt p {
+  line-height: 1.8rem;
 }
 
 header h1,
@@ -223,8 +227,17 @@ main {
 }
 
 .singleBento {
+  margin: 20px 0;
   width: 30%;
   text-align: center;
+}
+
+.singleBento h3 {
+  padding-bottom: 20px;
+}
+
+.singleBento p {
+  line-height: 1.8rem;
 }
 
 .bentoBox {
@@ -283,6 +296,18 @@ footer a {
 /* ***************************************************** */
 /*                      media queries                    */
 /* ***************************************************** */
+@media (max-width: 1410px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 1305px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 1232px) {
   .userInputForm {
     width: 60%;
@@ -290,20 +315,26 @@ footer a {
 }
 
 @media (max-width: 1155px) {
+  .hero {
+    width: 50%;
+  }
+
   .singleBento {
     width: calc( 50% - 10px);
-    margin: 5px;
+    margin: 20px 5px;
   }
 
 }
 
 @media (max-width: 1090px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-
   .heroTxt p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 1040px) {
+  h1 {
+    font-size: 1.8rem;
   }
 }
 
@@ -373,6 +404,11 @@ footer a {
 @media (max-width: 590px) {
   .singleBento {
     width: 100%;
+    border-bottom: 2px solid #2d2d2d;
+  }
+
+  .singleBento p {
+    padding: 20px 10px;
   }
 }
 
